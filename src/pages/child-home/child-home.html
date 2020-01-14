@@ -1,0 +1,38 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>child-home</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+<agm-map [latitude]="baselocation.latitude"
+[longitude]="baselocation.longitude"
+[zoom]="15">
+
+</agm-map>
+<br>
+<button ion-button block (click)="getlocation()">
+  Locate Me
+</button>
+<br>
+
+<ion-item>
+    <ion-label floating>Write message:</ion-label>
+    <ion-textarea #myInput id="myInput" rows="3" maxLength="150" (keyup)="resize()" [(ngModel)]="model"></ion-textarea>
+  </ion-item>
+<br>
+
+  <button ion-button block (click)="send()">Send</button>
+</ion-content>
+
+
+<ion-footer>
+    <ion-toolbar color="primary">
+      <ion-title></ion-title>
+    </ion-toolbar>
+  </ion-footer>
